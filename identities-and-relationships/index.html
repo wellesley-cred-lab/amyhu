@@ -17,7 +17,7 @@
 
 			<h1 style="position:absolute;left:4px;top:110px;font-size:162%">Abusive Relationship </h1> 
 			<p>Below are three cateogires of news sources, with the number of links under each category indicated in brackets. You can start exploring Google search results for each category of news source by scrolling through the links underneathe each title. </p>
-			<nav class = "right">
+			<nav class = "relationships">
 				<ul>	
 					<li><a id = "Abusive relationship cycle" data-src = "htmlPages/Abusive relationship cycle_P3.html">Abusive relationship cycle_P3</a></li>
 					<li><a id = "Abusive relationship help MA" data-src = "htmlPages/Abusive relationship help MA _P3.html">Abusive relationship help MA _P3</a></li>
@@ -36,9 +36,9 @@
 			</nav>
 
 		
-			<h1 style="position:absolute;left:4px;top:370px;font-size: 162%">Identities </h1> 
+			<h1 style="position:absolute;left:4px;top:470px;font-size: 162%">Identities </h1> 
 			
-			<nav class = "conspiracy">
+			<nav class = "identities">
 				<ul>
 					<li><a id = "(f)ae(f)aer" data-src = "htmlPages/(f)ae (f)aer_P5.html">(f)ae (f)aer_P5</a></li>
 					<li><a id = "Ace" data-src = "htmlPages/Ace_P7.html">Ace_P7</a></li>
@@ -61,28 +61,6 @@
 				</ul>
 			</nav>
 
-
-
-			<h1 style="position:absolute;left:4px;top:620px; font-size: 162%">Left (14) </h1>
-			<nav class = "left">
-				<ul>
-					<li><a id = "americanNewsX" data-src = "htmlPages/americannewsx.html">American News X</a></li>
-					
-					<li><a id = "AmericanHeraldTribune" data-src = "htmlPages/ahtribune.html">American Herald Tribune</a></li>
-					
-					<li><a id = "aboveTop" data-src = "htmlPages/abovetopsecret.html">Above Top Secret</a></li>
-
-					<li><a id = "breitbart" data-src = "htmlPages/breitbart.html">Breitbart News</a></li>
-
-					
-					<li><a id = "oped" data-src = "htmlPages/opednews.html">OpEdNews</a></li>
-					
-					<li><a id = "occupydemocrats" data-src = "htmlPages/occupydemocrats.html">Occupy Democrats</a></li>
-					
-
-				
-				</ul>
-			</nav>
 	
 		</div>
 	
@@ -96,12 +74,8 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 	</script>
 	
 	<script data-main="scripts/main" src="scripts/require.js"></script>
-	<iframe id='frame' scrolling="yes" width="87%" height="100%" align = "right"></iframe>
+	<iframe id='frame' scrolling="yes" width="83%" height="100%" align = "right"></iframe>
 
-	<script src = "breitbart" href = "htmlPages/breitbart.html"></script>  
-	<script src = "htmlPages/abovetopsecret.html"></script>
-	<script src = "htmlPages/americannewsx.html" type = "javascript"></script>
-	<script src = "htmlPages/ahtribune.html"></script>
 	
 	
 	<script src = "oped" href = "htmlPages/opednews.html" type = "javascript"></script>
@@ -118,7 +92,7 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 
 		    links.addEventListener("click", function (e) {
 		        iframe.src = e.target.dataset.src;
-		        iframe.width = "87%";
+		        iframe.width = "83%";
 		        iframe.height = "100%";
 		        iframe.align = "right";
 		        var filePath = e.target.dataset.src;		      
@@ -135,33 +109,27 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 
 	<style>
 		nav ul{
-			height:200px; width: 150px;;
+			height:300px; width: 170px;;
 		}
 		nav ul{
 			overflow:hidden;
 		 	overflow-y:scroll;
 		}
 
-		.right{
+		.relationships{
 			position: absolute;
 		    left: -12px;
 		    top: 155px;
 		}
 
-		.left{
+		.identities{
 			position: absolute;
 		    left: -12px;
-		    top: 410px;			
+		    top: 510px;			
 
 
 		}
 
-		.conspiracy {
-			position: absolute;
-		    left: -12px;
-		    top: 660px;
-
-		}
 
 		a:link {
 
