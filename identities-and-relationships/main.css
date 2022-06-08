@@ -1,0 +1,39 @@
+nav ul{
+    height:300px; width: 170px;;
+}
+nav ul{
+    overflow:hidden;
+     overflow-y:scroll;
+}
+
+.relationships{
+    position: absolute;
+    left: -12px;
+    top: 155px;
+}
+
+.identities{
+    position: absolute;
+    left: -12px;
+    top: 510px;			
+
+
+}
+
+
+a:link {
+
+    color: blue;
+}
+a:hover {
+    color: hotpink;
+    cursor: pointer;
+}
+a:visited {
+
+    color: green;
+}
+
+a:active {
+    color: black;
+}
