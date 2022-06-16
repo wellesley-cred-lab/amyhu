@@ -1,0 +1,125 @@
+<DOCTYPE html>
+    <html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width"> 
+        <title>Comparator</title>
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js"> </script> 
+        <script src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython_stdlib.js"> </script>
+        <script src="app.js"></script>
+		
+    </head>
+    <body onload="brython()">
+        <div>
+        <!-- Query Dropdown --> 
+            <select id='selQuery' class = 'selector' style='width: 200px;'>
+                <option value='0'>Select Query</option> 
+                <option value='(f)ae (f)aer'>(f)ae (f)aer</option> 
+                <option value='Abusive Relationship Cycle'>Abusive Relationship Cycle</option> 
+                <option value='Abusive Relationship Help'>Abusive Relationship Help</option> 
+                <option value='4'>Vishal Sahu</option> 
+                <option value='5'>Mayank Patidar</option> 
+                <option value='6'>Vijay Mourya</option> 
+                <option value='7'>Rakesh sahu</option> 
+            </select>
+
+        </div>
+
+        <div>
+        <!-- Date 1 Dropdown --> 
+        <select id='selDate1' class = 'selector' style='width: 200px;'>
+            <option value='0'>Select Date 1</option> 
+            <option value='6-8-22'>6-8-22</option> 
+            <option value='6-9-22'>6-9-22</option> 
+            <option value='6-13-22'>6-13-22</option> 
+        </select>
+
+
+
+        <!-- Date 2 Dropdown --> 
+        <select id='selDate2' class = 'selector' style='width: 200px;'>
+            <option value='0'>Select Date</option> 
+            <option value='6-8-22'>6-8-22</option> 
+            <option value='6-9-22'>6-9-22</option> 
+            <option value='6-13-22'>6-13-22</option> 
+        </select>
+
+        </div>
+
+
+        <br/>
+        <div id='result'></div>
+        <div id='resultDate1'></div>
+        <div id='resultDate2'></div>
+
+        <iframe id="iframeDate1" name="myIframe" frameborder="5" width="500" height="300"></iframe>
+        <iframe id="iframeDate2" name="myIframe" frameborder="5" width="500" height="300"></iframe>
+        <script>
+            $(document).ready(function(){
+                var queryname = '';
+                var date1 = '';
+                var date2 = '';
+                var filename1 = '';
+                var filename2 = '';
+
+                // Initialize select2
+                $("#selQuery").select2();
+                // Read selected option
+                $('#selQuery').change(function(){
+                    queryname = $('#selQuery option:selected').text();
+                    $('#result').html(queryname);
+                });
+
+                // Initialize select2
+                $("#selDate1").select2();
+                // Read selected option
+                $('#selDate1').change(function(){
+                    date1 = $('#selDate1 option:selected').text();
+                    //var userid = $('#selDate').val();
+                    $('#resultDate1').html(date1);
+                });
+
+                // Initialize select2
+                $("#selDate2").select2();
+                // Read selected option
+                $('#selDate2').change(function(){
+                    date2 = $('#selDate2 option:selected').text();
+                    //var userid = $('#selDate').val();
+                    $('#resultDate2').html(date2);
+                });
+
+                $('.selector').change(function(){
+                    filename1 = 'SERP_Collection/'+date1+"/"+queryname+".html";
+                    filename2 = 'SERP_Collection/'+date2+"/"+queryname+".html";
+                    $(document).ready(function(){
+                        console.log(filename1);
+                        $('#iframeDate1').attr('src', filename1);
+                        $('#iframeDate2').attr('src', filename2);
+
+                        $.post("https://cs.wellesley.edu/~credlab/serp-scraper-get-difference/create_serps_and_compare.py",
+                            {
+                                date1: "6-9-22",
+                                date2: "6-8-22",
+                                filename: "Ace.html"
+                            },
+                            function(data, status){
+                                alert("Data: " + data + "\nStatus: " + status);
+                            });
+                    });
+                })
+
+                });
+        </script>
+        <div>
+        
+        
+            
+            
+        </div>
+        
+    </body>

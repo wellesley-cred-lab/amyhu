@@ -6,266 +6,299 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width"> 
         <title>Display Source</title>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(":checkbox").click(function(){
+                    $("nav.relationships li").hide();
+                    $("nav.identities li").hide();
+                    $("#filters :checkbox:checked").each(function(){
+                        console.log("HELPPP")
+                        $('.'+$(this).val()).show();
+                    })
+                })
+            })
+        
+        </script>
+		<script src="app.js"></script>
+        <link rel="stylesheet" href="../main.css">
     </head>
 
     <body>
             <div class="centered">
                 <h1> Interactive Website for Google Search Results</h1>
 
-
-                <h1 style="position:absolute;left:4px;top:110px;font-size:162%">Abusive Relationship </h1> 
                 <p>Below are SERP pages for all queries from 6-9-22. You can start exploring Google search results for each category of queries by scrolling through the links underneathe each title. </p>
                 <a href="../index.html">Back to Homepage</a>
+                
+                <ul id="filters" style="padding-left:0px">
+					<li style="display:inline"><input type="checkbox" value="hotline" id="filter-hotline" >  <label for="filter-hotline">hotline</label></li>
+					<li style="display:inline"><input type="checkbox" value="peoplealsoask" id="filter-peoplealsoask" >  <label for="filter-peoplealsoask">people also ask</label></li>
+                    <li style="display:inline"><input type="checkbox" value="bottomads" id="filter-bottomads" >  <label for="filter-bottomads">bottom ads</label></li>
+					<li style="display:inline"><input type="checkbox" value="featuredsnippet" id="filter-featuredsnippet" >  <label for="filter-featuredsnippet">featured snippet</label></li>
+                    <li style="display:inline"><input type="checkbox" value="dictionary" id="filter-dictionary" >  <label for="filter-dictionary">dictionary</label></li>
+					<li style="display:inline"><input type="checkbox" value="googlescholar" id="filter-googlescholar" >  <label for="filter-googlescholar">google scholar</label></li>
+                    <li style="display:inline"><input type="checkbox" value="images" id="filter-images" >  <label for="filter-images">images</label></li>
+					<li style="display:inline"><input type="checkbox" value="knowledgepanel" id="filter-knowledgepanel" >  <label for="filter-knowledgepanel">knowledge panel</label></li>
+                    <li style="display:inline"><input type="checkbox" value="map" id="filter-map" >  <label for="filter-map">map</label></li>
+					<li style="display:inline"><input type="checkbox" value="seeresultsabout" id="filter-seeresultsabout" >  <label for="filter-seeresultsabout">see results about</label></li>
+                    <li style="display:inline"><input type="checkbox" value="topads" id="filter-topads" >  <label for="filter-topads">top ads</label></li>
+					<li style="display:inline"><input type="checkbox" value="topstories" id="filter-topstories" >  <label for="filter-topstories">top stories</label></li>
+                    <li style="display:inline"><input type="checkbox" value="twitterresults" id="filter-twitterresults" >  <label for="filter-twitterresults">twitter results</label></li>
+                    <li style="display:inline"><input type="checkbox" value="videos" id="filter-videos" >  <label for="filter-videos">videos</label></li>
+                    
+				</ul>
+                
+                <h1 style="position:absolute;left:4px;top:150px;font-size:162%">Abusive Relationship </h1> 
                 <nav class = "relationships">
                     <ul>
                     
-                        <li><a id="Abusive relationship cycle" data-src="../SERP_Collection/6-8-22/Abusive relationship cycle.html">Abusive relationship cycle</a></li> 
+                        <li class="hotline peoplealsoask"><a id="Abusive relationship cycle" data-src="../SERP_Collection/6-8-22/Abusive relationship cycle.html">Abusive relationship cycle</a></li> 
                     
-                        <li><a id="Abusive relationship help MA " data-src="../SERP_Collection/6-8-22/Abusive relationship help MA .html">Abusive relationship help MA </a></li> 
+                        <li class="hotline map topads peoplealsoask"><a id="Abusive relationship help MA " data-src="../SERP_Collection/6-8-22/Abusive relationship help MA .html">Abusive relationship help MA </a></li> 
                     
-                        <li><a id="Abusive relationship help" data-src="../SERP_Collection/6-8-22/Abusive relationship help.html">Abusive relationship help</a></li> 
+                        <li class="hotline peoplealsoask bottomads"><a id="Abusive relationship help" data-src="../SERP_Collection/6-8-22/Abusive relationship help.html">Abusive relationship help</a></li> 
                     
-                        <li><a id="Abusive relationship signs" data-src="../SERP_Collection/6-8-22/Abusive relationship signs.html">Abusive relationship signs</a></li> 
+                        <li class="hotline topads peoplealsoask bottomads"><a id="Abusive relationship signs" data-src="../SERP_Collection/6-8-22/Abusive relationship signs.html">Abusive relationship signs</a></li> 
                     
-                        <li><a id="Abusive relationship types " data-src="../SERP_Collection/6-8-22/Abusive relationship types .html">Abusive relationship types </a></li> 
+                        <li class="hotline peoplealsoask"><a id="Abusive relationship types " data-src="../SERP_Collection/6-8-22/Abusive relationship types .html">Abusive relationship types </a></li> 
                     
-                        <li><a id="Abusive relationship" data-src="../SERP_Collection/6-8-22/Abusive relationship.html">Abusive relationship</a></li> 
+                        <li class="topads peoplealsoask bottomads"><a id="Abusive relationship" data-src="../SERP_Collection/6-8-22/Abusive relationship.html">Abusive relationship</a></li> 
                     
-                        <li><a id="Attachment styles and cycles of abuse" data-src="../SERP_Collection/6-8-22/Attachment styles and cycles of abuse.html">Attachment styles and cycles of abuse</a></li> 
+                        <li class="peoplealsoask relatedsearches featuredsnippet"><a id="Attachment styles and cycles of abuse" data-src="../SERP_Collection/6-8-22/Attachment styles and cycles of abuse.html">Attachment styles and cycles of abuse</a></li> 
                     
-                        <li><a id="Communities for victims of partner-based violence" data-src="../SERP_Collection/6-8-22/Communities for victims of partner-based violence.html">Communities for victims of partner-based violence</a></li> 
+                        <li class="peoplealsoask"><a id="Communities for victims of partner-based violence" data-src="../SERP_Collection/6-8-22/Communities for victims of partner-based violence.html">Communities for victims of partner-based violence</a></li> 
                     
-                        <li><a id="Different kinds of domestic abuse" data-src="../SERP_Collection/6-8-22/Different kinds of domestic abuse.html">Different kinds of domestic abuse</a></li> 
+                        <li class="hotline peoplealsoask"><a id="Different kinds of domestic abuse" data-src="../SERP_Collection/6-8-22/Different kinds of domestic abuse.html">Different kinds of domestic abuse</a></li> 
                     
-                        <li><a id="Domestic violence hotlines and resources" data-src="../SERP_Collection/6-8-22/Domestic violence hotlines and resources.html">Domestic violence hotlines and resources</a></li> 
+                        <li class="hotline"><a id="Domestic violence hotlines and resources" data-src="../SERP_Collection/6-8-22/Domestic violence hotlines and resources.html">Domestic violence hotlines and resources</a></li> 
                     
-                        <li><a id="Domestic violence" data-src="../SERP_Collection/6-8-22/Domestic violence.html">Domestic violence</a></li> 
+                        <li class="hotline map peoplealsoask topstories"><a id="Domestic violence" data-src="../SERP_Collection/6-8-22/Domestic violence.html">Domestic violence</a></li> 
                     
-                        <li><a id="Emotional vs physical abuse" data-src="../SERP_Collection/6-8-22/Emotional vs physical abuse.html">Emotional vs physical abuse</a></li> 
+                        <li class="hotline peoplealsoask"><a id="Emotional vs physical abuse" data-src="../SERP_Collection/6-8-22/Emotional vs physical abuse.html">Emotional vs physical abuse</a></li> 
                     
-                        <li><a id="Gaslighting" data-src="../SERP_Collection/6-8-22/Gaslighting.html">Gaslighting</a></li> 
+                        <li class="relatedsearches dictionary knowledgepanel peoplealsoask videos"><a id="Gaslighting" data-src="../SERP_Collection/6-8-22/Gaslighting.html">Gaslighting</a></li> 
                     
-                        <li><a id="Healthy vs unhealthy love" data-src="../SERP_Collection/6-8-22/Healthy vs unhealthy love.html">Healthy vs unhealthy love</a></li> 
+                        <li class="relatedsearches images featuredsnippet peoplealsoask videos"><a id="Healthy vs unhealthy love" data-src="../SERP_Collection/6-8-22/Healthy vs unhealthy love.html">Healthy vs unhealthy love</a></li> 
                     
-                        <li><a id="Hotlines for those in abusive relationships" data-src="../SERP_Collection/6-8-22/Hotlines for those in abusive relationships.html">Hotlines for those in abusive relationships</a></li> 
+                        <li class="hotline peoplealsoask"><a id="Hotlines for those in abusive relationships" data-src="../SERP_Collection/6-8-22/Hotlines for those in abusive relationships.html">Hotlines for those in abusive relationships</a></li> 
                     
-                        <li><a id="How become financially independent in a relationship" data-src="../SERP_Collection/6-8-22/How become financially independent in a relationship.html">How become financially independent in a relationship</a></li> 
+                        <li class="peoplealsoask relatedsearches"><a id="How become financially independent in a relationship" data-src="../SERP_Collection/6-8-22/How become financially independent in a relationship.html">How become financially independent in a relationship</a></li> 
                     
-                        <li><a id="How many women die from domestic violence" data-src="../SERP_Collection/6-8-22/How many women die from domestic violence.html">How many women die from domestic violence</a></li> 
+                        <li class=""><a id="How many women die from domestic violence" data-src="../SERP_Collection/6-8-22/How many women die from domestic violence.html">How many women die from domestic violence</a></li> 
                     
-                        <li><a id="How many women suffer from violence in relationships" data-src="../SERP_Collection/6-8-22/How many women suffer from violence in relationships.html">How many women suffer from violence in relationships</a></li> 
+                        <li class="peoplealsoask"><a id="How many women suffer from violence in relationships" data-src="../SERP_Collection/6-8-22/How many women suffer from violence in relationships.html">How many women suffer from violence in relationships</a></li> 
                     
-                        <li><a id="How to get out of a toxic relationship" data-src="../SERP_Collection/6-8-22/How to get out of a toxic relationship.html">How to get out of a toxic relationship</a></li> 
+                        <li class="relatedsearches bottomads topads featuredsnippet peoplealsoask videos"><a id="How to get out of a toxic relationship" data-src="../SERP_Collection/6-8-22/How to get out of a toxic relationship.html">How to get out of a toxic relationship</a></li> 
                     
-                        <li><a id="How to help a friend in an abusive relationship" data-src="../SERP_Collection/6-8-22/How to help a friend in an abusive relationship.html">How to help a friend in an abusive relationship</a></li> 
+                        <li class="hotline topads peoplealsoask bottomads"><a id="How to help a friend in an abusive relationship" data-src="../SERP_Collection/6-8-22/How to help a friend in an abusive relationship.html">How to help a friend in an abusive relationship</a></li> 
                     
-                        <li><a id="How to learn to receive healthy love" data-src="../SERP_Collection/6-8-22/How to learn to receive healthy love.html">How to learn to receive healthy love</a></li> 
+                        <li class="peoplealsoask relatedsearches featuredsnippet"><a id="How to learn to receive healthy love" data-src="../SERP_Collection/6-8-22/How to learn to receive healthy love.html">How to learn to receive healthy love</a></li> 
                     
-                        <li><a id="How to leave an abusive relationship" data-src="../SERP_Collection/6-8-22/How to leave an abusive relationship.html">How to leave an abusive relationship</a></li> 
+                        <li class="topads peoplealsoask bottomads"><a id="How to leave an abusive relationship" data-src="../SERP_Collection/6-8-22/How to leave an abusive relationship.html">How to leave an abusive relationship</a></li> 
                     
-                        <li><a id="How to recognize an abusive partner" data-src="../SERP_Collection/6-8-22/How to recognize an abusive partner.html">How to recognize an abusive partner</a></li> 
+                        <li class="topads peoplealsoask bottomads"><a id="How to recognize an abusive partner" data-src="../SERP_Collection/6-8-22/How to recognize an abusive partner.html">How to recognize an abusive partner</a></li> 
                     
-                        <li><a id="How to recognize emotional abuse in relationships" data-src="../SERP_Collection/6-8-22/How to recognize emotional abuse in relationships.html">How to recognize emotional abuse in relationships</a></li> 
+                        <li class="hotline topads peoplealsoask bottomads"><a id="How to recognize emotional abuse in relationships" data-src="../SERP_Collection/6-8-22/How to recognize emotional abuse in relationships.html">How to recognize emotional abuse in relationships</a></li> 
                     
-                        <li><a id="How to recover from an abusive relationship" data-src="../SERP_Collection/6-8-22/How to recover from an abusive relationship.html">How to recover from an abusive relationship</a></li> 
+                        <li class="hotline topads peoplealsoask bottomads"><a id="How to recover from an abusive relationship" data-src="../SERP_Collection/6-8-22/How to recover from an abusive relationship.html">How to recover from an abusive relationship</a></li> 
                     
-                        <li><a id="Learning about attachment styles" data-src="../SERP_Collection/6-8-22/Learning about attachment styles.html">Learning about attachment styles</a></li> 
+                        <li class="videos peoplealsoask relatedsearches featuredsnippet"><a id="Learning about attachment styles" data-src="../SERP_Collection/6-8-22/Learning about attachment styles.html">Learning about attachment styles</a></li> 
                     
-                        <li><a id="Partner abuse" data-src="../SERP_Collection/6-8-22/Partner abuse.html">Partner abuse</a></li> 
+                        <li class="peoplealsoask topstories"><a id="Partner abuse" data-src="../SERP_Collection/6-8-22/Partner abuse.html">Partner abuse</a></li> 
                     
-                        <li><a id="Resources for reporting partner abuse" data-src="../SERP_Collection/6-8-22/Resources for reporting partner abuse.html">Resources for reporting partner abuse</a></li> 
+                        <li class="peoplealsoask"><a id="Resources for reporting partner abuse" data-src="../SERP_Collection/6-8-22/Resources for reporting partner abuse.html">Resources for reporting partner abuse</a></li> 
                     
-                        <li><a id="Safety plan domestic violence" data-src="../SERP_Collection/6-8-22/Safety plan domestic violence.html">Safety plan domestic violence</a></li> 
+                        <li class="hotline topads peoplealsoask relatedsearches"><a id="Safety plan domestic violence" data-src="../SERP_Collection/6-8-22/Safety plan domestic violence.html">Safety plan domestic violence</a></li> 
                     
-                        <li><a id="Toxic relationship patterns" data-src="../SERP_Collection/6-8-22/Toxic relationship patterns.html">Toxic relationship patterns</a></li> 
+                        <li class="unknown relatedsearches bottomads images featuredsnippet peoplealsoask"><a id="Toxic relationship patterns" data-src="../SERP_Collection/6-8-22/Toxic relationship patterns.html">Toxic relationship patterns</a></li> 
                     
-                        <li><a id="Toxic relationship test " data-src="../SERP_Collection/6-8-22/Toxic relationship test .html">Toxic relationship test </a></li> 
+                        <li class="unknown topads peoplealsoask relatedsearches"><a id="Toxic relationship test " data-src="../SERP_Collection/6-8-22/Toxic relationship test .html">Toxic relationship test </a></li> 
                     
-                        <li><a id="Toxic relationship" data-src="../SERP_Collection/6-8-22/Toxic relationship.html">Toxic relationship</a></li> 
+                        <li class="peoplealsoask relatedsearches featuredsnippet"><a id="Toxic relationship" data-src="../SERP_Collection/6-8-22/Toxic relationship.html">Toxic relationship</a></li> 
                     
-                        <li><a id="What are characteristics of a toxic relationship" data-src="../SERP_Collection/6-8-22/What are characteristics of a toxic relationship.html">What are characteristics of a toxic relationship</a></li> 
+                        <li class="topads peoplealsoask relatedsearches featuredsnippet"><a id="What are characteristics of a toxic relationship" data-src="../SERP_Collection/6-8-22/What are characteristics of a toxic relationship.html">What are characteristics of a toxic relationship</a></li> 
                     
-                        <li><a id="What are types of partner-based violence" data-src="../SERP_Collection/6-8-22/What are types of partner-based violence.html">What are types of partner-based violence</a></li> 
+                        <li class="peoplealsoask relatedsearches featuredsnippet"><a id="What are types of partner-based violence" data-src="../SERP_Collection/6-8-22/What are types of partner-based violence.html">What are types of partner-based violence</a></li> 
                     
-                        <li><a id="What is financial abuse in relationships" data-src="../SERP_Collection/6-8-22/What is financial abuse in relationships.html">What is financial abuse in relationships</a></li> 
+                        <li class="hotline peoplealsoask"><a id="What is financial abuse in relationships" data-src="../SERP_Collection/6-8-22/What is financial abuse in relationships.html">What is financial abuse in relationships</a></li> 
                     
-                        <li><a id="What is trauma bonding" data-src="../SERP_Collection/6-8-22/What is trauma bonding.html">What is trauma bonding</a></li> 
+                        <li class="topads peoplealsoask relatedsearches knowledgepanel"><a id="What is trauma bonding" data-src="../SERP_Collection/6-8-22/What is trauma bonding.html">What is trauma bonding</a></li> 
                     
-                        <li><a id="Why do people stay in toxic relationships" data-src="../SERP_Collection/6-8-22/Why do people stay in toxic relationships.html">Why do people stay in toxic relationships</a></li> 
+                        <li class="videos peoplealsoask relatedsearches featuredsnippet"><a id="Why do people stay in toxic relationships" data-src="../SERP_Collection/6-8-22/Why do people stay in toxic relationships.html">Why do people stay in toxic relationships</a></li> 
                     
-                        <li><a id="Why is it hard to leave an abusive partner" data-src="../SERP_Collection/6-8-22/Why is it hard to leave an abusive partner.html">Why is it hard to leave an abusive partner</a></li> 
+                        <li class="hotline topads peoplealsoask bottomads"><a id="Why is it hard to leave an abusive partner" data-src="../SERP_Collection/6-8-22/Why is it hard to leave an abusive partner.html">Why is it hard to leave an abusive partner</a></li> 
                     
-                        <li><a id="emotional abuse checklist" data-src="../SERP_Collection/6-8-22/emotional abuse checklist.html">emotional abuse checklist</a></li> 
+                        <li class="topads peoplealsoask bottomads"><a id="emotional abuse checklist" data-src="../SERP_Collection/6-8-22/emotional abuse checklist.html">emotional abuse checklist</a></li> 
                     
-                        <li><a id="how to tell if you are in a toxic relationship" data-src="../SERP_Collection/6-8-22/how to tell if you are in a toxic relationship.html">how to tell if you are in a toxic relationship</a></li> 
+                        <li class="topads peoplealsoask relatedsearches featuredsnippet"><a id="how to tell if you are in a toxic relationship" data-src="../SERP_Collection/6-8-22/how to tell if you are in a toxic relationship.html">how to tell if you are in a toxic relationship</a></li> 
                     
-                        <li><a id="how to tell if you are in an emotionally abusive relationship" data-src="../SERP_Collection/6-8-22/how to tell if you are in an emotionally abusive relationship.html">how to tell if you are in an emotionally abusive relationship</a></li> 
+                        <li class="hotline topads peoplealsoask bottomads"><a id="how to tell if you are in an emotionally abusive relationship" data-src="../SERP_Collection/6-8-22/how to tell if you are in an emotionally abusive relationship.html">how to tell if you are in an emotionally abusive relationship</a></li> 
                     
                     </ul>
 
                 </nav>
 
 
-                <h1 style="position:absolute;left:4px;top:470px;font-size: 162%">Identities </h1> 
-
+                <h1 style="position:absolute;left:4px;top:520px;font-size: 162%">Identities </h1> 
                 <nav class = "identities">
                     <ul>
                     
-                        <li><a id="(f)ae (f)aer" data-src="../SERP_Collection/6-8-22/(f)ae (f)aer.html">(f)ae (f)aer</a></li> 
+                        <li class="peoplealsoask relatedsearches"><a id="(f)ae (f)aer" data-src="../SERP_Collection/6-8-22/(f)ae (f)aer.html">(f)ae (f)aer</a></li> 
                     
-                        <li><a id="Ace" data-src="../SERP_Collection/6-8-22/Ace.html">Ace</a></li> 
+                        <li class="seeresultsabout map relatedsearches topads knowledgepanel videos"><a id="Ace" data-src="../SERP_Collection/6-8-22/Ace.html">Ace</a></li> 
                     
-                        <li><a id="Agender" data-src="../SERP_Collection/6-8-22/Agender.html">Agender</a></li> 
+                        <li class="seeresultsabout peoplealsoask relatedsearches featuredsnippet"><a id="Agender" data-src="../SERP_Collection/6-8-22/Agender.html">Agender</a></li> 
                     
-                        <li><a id="Alternate pronouns" data-src="../SERP_Collection/6-8-22/Alternate pronouns.html">Alternate pronouns</a></li> 
+                        <li class="relatedsearches topads images featuredsnippet peoplealsoask videos"><a id="Alternate pronouns" data-src="../SERP_Collection/6-8-22/Alternate pronouns.html">Alternate pronouns</a></li> 
                     
-                        <li><a id="Aro Ace" data-src="../SERP_Collection/6-8-22/Aro Ace.html">Aro Ace</a></li> 
+                        <li class="videos peoplealsoask relatedsearches featuredsnippet"><a id="Aro Ace" data-src="../SERP_Collection/6-8-22/Aro Ace.html">Aro Ace</a></li> 
                     
-                        <li><a id="Aromantic" data-src="../SERP_Collection/6-8-22/Aromantic.html">Aromantic</a></li> 
+                        <li class="seeresultsabout peoplealsoask relatedsearches videos"><a id="Aromantic" data-src="../SERP_Collection/6-8-22/Aromantic.html">Aromantic</a></li> 
                     
-                        <li><a id="Asexual" data-src="../SERP_Collection/6-8-22/Asexual.html">Asexual</a></li> 
+                        <li class="twitterresults relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Asexual" data-src="../SERP_Collection/6-8-22/Asexual.html">Asexual</a></li> 
                     
-                        <li><a id="Asexuality" data-src="../SERP_Collection/6-8-22/Asexuality.html">Asexuality</a></li> 
+                        <li class="seeresultsabout relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Asexuality" data-src="../SERP_Collection/6-8-22/Asexuality.html">Asexuality</a></li> 
                     
-                        <li><a id="Bi" data-src="../SERP_Collection/6-8-22/Bi.html">Bi</a></li> 
+                        <li class="seeresultsabout map dictionary knowledgepanel peoplealsoask videos"><a id="Bi" data-src="../SERP_Collection/6-8-22/Bi.html">Bi</a></li> 
                     
-                        <li><a id="Bisexual" data-src="../SERP_Collection/6-8-22/Bisexual.html">Bisexual</a></li> 
+                        <li class="dictionary knowledgepanel topstories peoplealsoask videos"><a id="Bisexual" data-src="../SERP_Collection/6-8-22/Bisexual.html">Bisexual</a></li> 
                     
-                        <li><a id="Bisexuality versus pansexuality" data-src="../SERP_Collection/6-8-22/Bisexuality versus pansexuality.html">Bisexuality versus pansexuality</a></li> 
+                        <li class="twitterresults relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Bisexuality versus pansexuality" data-src="../SERP_Collection/6-8-22/Bisexuality versus pansexuality.html">Bisexuality versus pansexuality</a></li> 
                     
-                        <li><a id="Cisgender" data-src="../SERP_Collection/6-8-22/Cisgender.html">Cisgender</a></li> 
+                        <li class="unknown relatedsearches dictionary knowledgepanel peoplealsoask videos"><a id="Cisgender" data-src="../SERP_Collection/6-8-22/Cisgender.html">Cisgender</a></li> 
                     
-                        <li><a id="Coming out experiences" data-src="../SERP_Collection/6-8-22/Coming out experiences.html">Coming out experiences</a></li> 
+                        <li class="topads peoplealsoask relatedsearches bottomads"><a id="Coming out experiences" data-src="../SERP_Collection/6-8-22/Coming out experiences.html">Coming out experiences</a></li> 
                     
-                        <li><a id="Coming out" data-src="../SERP_Collection/6-8-22/Coming out.html">Coming out</a></li> 
+                        <li class="topads knowledgepanel"><a id="Coming out" data-src="../SERP_Collection/6-8-22/Coming out.html">Coming out</a></li> 
                     
-                        <li><a id="Demisexual" data-src="../SERP_Collection/6-8-22/Demisexual.html">Demisexual</a></li> 
+                        <li class="relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Demisexual" data-src="../SERP_Collection/6-8-22/Demisexual.html">Demisexual</a></li> 
                     
-                        <li><a id="Diversity" data-src="../SERP_Collection/6-8-22/Diversity.html">Diversity</a></li> 
+                        <li class="map relatedsearches dictionary knowledgepanel peoplealsoask videos"><a id="Diversity" data-src="../SERP_Collection/6-8-22/Diversity.html">Diversity</a></li> 
                     
-                        <li><a id="Gay" data-src="../SERP_Collection/6-8-22/Gay.html">Gay</a></li> 
+                        <li class="map relatedsearches dictionary topstories videos"><a id="Gay" data-src="../SERP_Collection/6-8-22/Gay.html">Gay</a></li> 
                     
-                        <li><a id="Gender binary" data-src="../SERP_Collection/6-8-22/Gender binary.html">Gender binary</a></li> 
+                        <li class="seeresultsabout relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Gender binary" data-src="../SERP_Collection/6-8-22/Gender binary.html">Gender binary</a></li> 
                     
-                        <li><a id="Gender dysphoria" data-src="../SERP_Collection/6-8-22/Gender dysphoria.html">Gender dysphoria</a></li> 
+                        <li class="peoplealsoask relatedsearches featuredsnippet"><a id="Gender dysphoria" data-src="../SERP_Collection/6-8-22/Gender dysphoria.html">Gender dysphoria</a></li> 
                     
-                        <li><a id="Gender expression" data-src="../SERP_Collection/6-8-22/Gender expression.html">Gender expression</a></li> 
+                        <li class="seeresultsabout twitterresults relatedsearches knowledgepanel peoplealsoask videos"><a id="Gender expression" data-src="../SERP_Collection/6-8-22/Gender expression.html">Gender expression</a></li> 
                     
-                        <li><a id="Gender identities" data-src="../SERP_Collection/6-8-22/Gender identities.html">Gender identities</a></li> 
+                        <li class="seeresultsabout twitterresults relatedsearches topads knowledgepanel peoplealsoask videos"><a id="Gender identities" data-src="../SERP_Collection/6-8-22/Gender identities.html">Gender identities</a></li> 
                     
-                        <li><a id="Gender identity" data-src="../SERP_Collection/6-8-22/Gender identity.html">Gender identity</a></li> 
+                        <li class="seeresultsabout twitterresults relatedsearches topads knowledgepanel featuredsnippet peoplealsoask"><a id="Gender identity" data-src="../SERP_Collection/6-8-22/Gender identity.html">Gender identity</a></li> 
                     
-                        <li><a id="Gender neutral gender inclusive pronouns" data-src="../SERP_Collection/6-8-22/Gender neutral gender inclusive pronouns.html">Gender neutral gender inclusive pronouns</a></li> 
+                        <li class="videos peoplealsoask relatedsearches featuredsnippet"><a id="Gender neutral gender inclusive pronouns" data-src="../SERP_Collection/6-8-22/Gender neutral gender inclusive pronouns.html">Gender neutral gender inclusive pronouns</a></li> 
                     
-                        <li><a id="Gender neutral pronouns" data-src="../SERP_Collection/6-8-22/Gender neutral pronouns.html">Gender neutral pronouns</a></li> 
+                        <li class="relatedsearches images featuredsnippet peoplealsoask videos"><a id="Gender neutral pronouns" data-src="../SERP_Collection/6-8-22/Gender neutral pronouns.html">Gender neutral pronouns</a></li> 
                     
-                        <li><a id="Gender non-conforming" data-src="../SERP_Collection/6-8-22/Gender non-conforming.html">Gender non-conforming</a></li> 
+                        <li class="seeresultsabout relatedsearches knowledgepanel peoplealsoask videos"><a id="Gender non-conforming" data-src="../SERP_Collection/6-8-22/Gender non-conforming.html">Gender non-conforming</a></li> 
                     
-                        <li><a id="Gender pronouns" data-src="../SERP_Collection/6-8-22/Gender pronouns.html">Gender pronouns</a></li> 
+                        <li class="relatedsearches topstories knowledgepanel featuredsnippet peoplealsoask videos"><a id="Gender pronouns" data-src="../SERP_Collection/6-8-22/Gender pronouns.html">Gender pronouns</a></li> 
                     
-                        <li><a id="Gender questioning" data-src="../SERP_Collection/6-8-22/Gender questioning.html">Gender questioning</a></li> 
+                        <li class="relatedsearches images featuredsnippet peoplealsoask videos"><a id="Gender questioning" data-src="../SERP_Collection/6-8-22/Gender questioning.html">Gender questioning</a></li> 
                     
-                        <li><a id="Gender reassignment surgeries" data-src="../SERP_Collection/6-8-22/Gender reassignment surgeries.html">Gender reassignment surgeries</a></li> 
+                        <li class="relatedsearches peoplealsoask topstories seeresultsabout"><a id="Gender reassignment surgeries" data-src="../SERP_Collection/6-8-22/Gender reassignment surgeries.html">Gender reassignment surgeries</a></li> 
                     
-                        <li><a id="Gender reassignment" data-src="../SERP_Collection/6-8-22/Gender reassignment.html">Gender reassignment</a></li> 
+                        <li class="seeresultsabout relatedsearches knowledgepanel topstories featuredsnippet peoplealsoask"><a id="Gender reassignment" data-src="../SERP_Collection/6-8-22/Gender reassignment.html">Gender reassignment</a></li> 
                     
-                        <li><a id="Gender transitions" data-src="../SERP_Collection/6-8-22/Gender transitions.html">Gender transitions</a></li> 
+                        <li class="videos peoplealsoask relatedsearches featuredsnippet"><a id="Gender transitions" data-src="../SERP_Collection/6-8-22/Gender transitions.html">Gender transitions</a></li> 
                     
-                        <li><a id="Gender-affirming practices" data-src="../SERP_Collection/6-8-22/Gender-affirming practices.html">Gender-affirming practices</a></li> 
+                        <li class="googlescholar peoplealsoask relatedsearches featuredsnippet"><a id="Gender-affirming practices" data-src="../SERP_Collection/6-8-22/Gender-affirming practices.html">Gender-affirming practices</a></li> 
                     
-                        <li><a id="Gender-expansive" data-src="../SERP_Collection/6-8-22/Gender-expansive.html">Gender-expansive</a></li> 
+                        <li class=""><a id="Gender-expansive" data-src="../SERP_Collection/6-8-22/Gender-expansive.html">Gender-expansive</a></li> 
                     
-                        <li><a id="Gender-reaffirming resources free" data-src="../SERP_Collection/6-8-22/Gender-reaffirming resources free.html">Gender-reaffirming resources free</a></li> 
+                        <li class="images relatedsearches"><a id="Gender-reaffirming resources free" data-src="../SERP_Collection/6-8-22/Gender-reaffirming resources free.html">Gender-reaffirming resources free</a></li> 
                     
-                        <li><a id="Genderfluid" data-src="../SERP_Collection/6-8-22/Genderfluid.html">Genderfluid</a></li> 
+                        <li class="relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Genderfluid" data-src="../SERP_Collection/6-8-22/Genderfluid.html">Genderfluid</a></li> 
                     
-                        <li><a id="Genderqueer" data-src="../SERP_Collection/6-8-22/Genderqueer.html">Genderqueer</a></li> 
+                        <li class="seeresultsabout relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Genderqueer" data-src="../SERP_Collection/6-8-22/Genderqueer.html">Genderqueer</a></li> 
                     
-                        <li><a id="How to be a LGBTQ+ ally" data-src="../SERP_Collection/6-8-22/How to be a LGBTQ+ ally.html">How to be a LGBTQ+ ally</a></li> 
+                        <li class="twitterresults unknown relatedsearches bottomads images peoplealsoask"><a id="How to be a LGBTQ+ ally" data-src="../SERP_Collection/6-8-22/How to be a LGBTQ+ ally.html">How to be a LGBTQ+ ally</a></li> 
                     
-                        <li><a id="How to come out" data-src="../SERP_Collection/6-8-22/How to come out.html">How to come out</a></li> 
+                        <li class="topads peoplealsoask relatedsearches bottomads"><a id="How to come out" data-src="../SERP_Collection/6-8-22/How to come out.html">How to come out</a></li> 
                     
-                        <li><a id="How to create space for LGBTQ+ community" data-src="../SERP_Collection/6-8-22/How to create space for LGBTQ+ community.html">How to create space for LGBTQ+ community</a></li> 
+                        <li class="peoplealsoask relatedsearches"><a id="How to create space for LGBTQ+ community" data-src="../SERP_Collection/6-8-22/How to create space for LGBTQ+ community.html">How to create space for LGBTQ+ community</a></li> 
                     
-                        <li><a id="How to have LGBTQ terminology that is less binary" data-src="../SERP_Collection/6-8-22/How to have LGBTQ terminology that is less binary.html">How to have LGBTQ terminology that is less binary</a></li> 
+                        <li class=""><a id="How to have LGBTQ terminology that is less binary" data-src="../SERP_Collection/6-8-22/How to have LGBTQ terminology that is less binary.html">How to have LGBTQ terminology that is less binary</a></li> 
                     
-                        <li><a id="How to introduce new pronouns to your friends" data-src="../SERP_Collection/6-8-22/How to introduce new pronouns to your friends.html">How to introduce new pronouns to your friends</a></li> 
+                        <li class="peoplealsoask relatedsearches featuredsnippet"><a id="How to introduce new pronouns to your friends" data-src="../SERP_Collection/6-8-22/How to introduce new pronouns to your friends.html">How to introduce new pronouns to your friends</a></li> 
                     
-                        <li><a id="Inclusion" data-src="../SERP_Collection/6-8-22/Inclusion.html">Inclusion</a></li> 
+                        <li class="relatedsearches dictionary knowledgepanel peoplealsoask videos"><a id="Inclusion" data-src="../SERP_Collection/6-8-22/Inclusion.html">Inclusion</a></li> 
                     
-                        <li><a id="Intersectionality" data-src="../SERP_Collection/6-8-22/Intersectionality.html">Intersectionality</a></li> 
+                        <li class="seeresultsabout twitterresults relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Intersectionality" data-src="../SERP_Collection/6-8-22/Intersectionality.html">Intersectionality</a></li> 
                     
-                        <li><a id="Intersex" data-src="../SERP_Collection/6-8-22/Intersex.html">Intersex</a></li> 
+                        <li class="seeresultsabout twitterresults relatedsearches topstories knowledgepanel featuredsnippet peoplealsoask videos"><a id="Intersex" data-src="../SERP_Collection/6-8-22/Intersex.html">Intersex</a></li> 
                     
-                        <li><a id="Is being queer the same as being gay" data-src="../SERP_Collection/6-8-22/Is being queer the same as being gay.html">Is being queer the same as being gay</a></li> 
+                        <li class=""><a id="Is being queer the same as being gay" data-src="../SERP_Collection/6-8-22/Is being queer the same as being gay.html">Is being queer the same as being gay</a></li> 
                     
-                        <li><a id="LGBTQ+ Resources" data-src="../SERP_Collection/6-8-22/LGBTQ+ Resources.html">LGBTQ+ Resources</a></li> 
+                        <li class="twitterresults relatedsearches bottomads topads peoplealsoask"><a id="LGBTQ+ Resources" data-src="../SERP_Collection/6-8-22/LGBTQ+ Resources.html">LGBTQ+ Resources</a></li> 
                     
-                        <li><a id="LGBTQ+ discrimination" data-src="../SERP_Collection/6-8-22/LGBTQ+ discrimination.html">LGBTQ+ discrimination</a></li> 
+                        <li class="googlescholar"><a id="LGBTQ+ discrimination" data-src="../SERP_Collection/6-8-22/LGBTQ+ discrimination.html">LGBTQ+ discrimination</a></li> 
                     
-                        <li><a id="LGBTQ+" data-src="../SERP_Collection/6-8-22/LGBTQ+.html">LGBTQ+</a></li> 
+                        <li class="seeresultsabout twitterresults relatedsearches topads topstories knowledgepanel peoplealsoask"><a id="LGBTQ+" data-src="../SERP_Collection/6-8-22/LGBTQ+.html">LGBTQ+</a></li> 
                     
-                        <li><a id="Lesbian" data-src="../SERP_Collection/6-8-22/Lesbian.html">Lesbian</a></li> 
+                        <li class="dictionary peoplealsoask topstories"><a id="Lesbian" data-src="../SERP_Collection/6-8-22/Lesbian.html">Lesbian</a></li> 
                     
-                        <li><a id="Neopronouns" data-src="../SERP_Collection/6-8-22/Neopronouns.html">Neopronouns</a></li> 
+                        <li class="relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Neopronouns" data-src="../SERP_Collection/6-8-22/Neopronouns.html">Neopronouns</a></li> 
                     
-                        <li><a id="Non-binary Gender Queer" data-src="../SERP_Collection/6-8-22/Non-binary Gender Queer.html">Non-binary Gender Queer</a></li> 
+                        <li class="knowledgepanel"><a id="Non-binary Gender Queer" data-src="../SERP_Collection/6-8-22/Non-binary Gender Queer.html">Non-binary Gender Queer</a></li> 
                     
-                        <li><a id="Non-binary practices in different cultures" data-src="../SERP_Collection/6-8-22/Non-binary practices in different cultures.html">Non-binary practices in different cultures</a></li> 
+                        <li class="peoplealsoask relatedsearches"><a id="Non-binary practices in different cultures" data-src="../SERP_Collection/6-8-22/Non-binary practices in different cultures.html">Non-binary practices in different cultures</a></li> 
                     
-                        <li><a id="Non-binary versus agender" data-src="../SERP_Collection/6-8-22/Non-binary versus agender.html">Non-binary versus agender</a></li> 
+                        <li class="peoplealsoask relatedsearches featuredsnippet"><a id="Non-binary versus agender" data-src="../SERP_Collection/6-8-22/Non-binary versus agender.html">Non-binary versus agender</a></li> 
                     
-                        <li><a id="Non-heterosexual" data-src="../SERP_Collection/6-8-22/Non-heterosexual.html">Non-heterosexual</a></li> 
+                        <li class="relatedsearches images knowledgepanel featuredsnippet peoplealsoask"><a id="Non-heterosexual" data-src="../SERP_Collection/6-8-22/Non-heterosexual.html">Non-heterosexual</a></li> 
                     
-                        <li><a id="Nonbinary" data-src="../SERP_Collection/6-8-22/Nonbinary.html">Nonbinary</a></li> 
+                        <li class="seeresultsabout relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Nonbinary" data-src="../SERP_Collection/6-8-22/Nonbinary.html">Nonbinary</a></li> 
                     
-                        <li><a id="Omnigender" data-src="../SERP_Collection/6-8-22/Omnigender.html">Omnigender</a></li> 
+                        <li class="seeresultsabout images peoplealsoask relatedsearches"><a id="Omnigender" data-src="../SERP_Collection/6-8-22/Omnigender.html">Omnigender</a></li> 
                     
-                        <li><a id="Omnisexual" data-src="../SERP_Collection/6-8-22/Omnisexual.html">Omnisexual</a></li> 
+                        <li class="images dictionary relatedsearches"><a id="Omnisexual" data-src="../SERP_Collection/6-8-22/Omnisexual.html">Omnisexual</a></li> 
                     
-                        <li><a id="Pronouns definition" data-src="../SERP_Collection/6-8-22/Pronouns definition.html">Pronouns definition</a></li> 
+                        <li class="unknown relatedsearches dictionary knowledgepanel peoplealsoask"><a id="Pronouns definition" data-src="../SERP_Collection/6-8-22/Pronouns definition.html">Pronouns definition</a></li> 
                     
-                        <li><a id="Pronouns" data-src="../SERP_Collection/6-8-22/Pronouns.html">Pronouns</a></li> 
+                        <li class="seeresultsabout relatedsearches knowledgepanel topstories peoplealsoask videos"><a id="Pronouns" data-src="../SERP_Collection/6-8-22/Pronouns.html">Pronouns</a></li> 
                     
-                        <li><a id="Queer identities definition" data-src="../SERP_Collection/6-8-22/Queer identities definition.html">Queer identities definition</a></li> 
+                        <li class="topads peoplealsoask relatedsearches featuredsnippet"><a id="Queer identities definition" data-src="../SERP_Collection/6-8-22/Queer identities definition.html">Queer identities definition</a></li> 
                     
-                        <li><a id="Queer identities" data-src="../SERP_Collection/6-8-22/Queer identities.html">Queer identities</a></li> 
+                        <li class="twitterresults relatedsearches topads images featuredsnippet peoplealsoask"><a id="Queer identities" data-src="../SERP_Collection/6-8-22/Queer identities.html">Queer identities</a></li> 
                     
-                        <li><a id="Queer" data-src="../SERP_Collection/6-8-22/Queer.html">Queer</a></li> 
+                        <li class="relatedsearches dictionary topstories knowledgepanel peoplealsoask"><a id="Queer" data-src="../SERP_Collection/6-8-22/Queer.html">Queer</a></li> 
                     
-                        <li><a id="Sex assigned at birth" data-src="../SERP_Collection/6-8-22/Sex assigned at birth.html">Sex assigned at birth</a></li> 
+                        <li class="videos peoplealsoask relatedsearches featuredsnippet"><a id="Sex assigned at birth" data-src="../SERP_Collection/6-8-22/Sex assigned at birth.html">Sex assigned at birth</a></li> 
                     
-                        <li><a id="Sexual Minority" data-src="../SERP_Collection/6-8-22/Sexual Minority.html">Sexual Minority</a></li> 
+                        <li class="knowledgepanel featuredsnippet"><a id="Sexual Minority" data-src="../SERP_Collection/6-8-22/Sexual Minority.html">Sexual Minority</a></li> 
                     
-                        <li><a id="Sexual orientation" data-src="../SERP_Collection/6-8-22/Sexual orientation.html">Sexual orientation</a></li> 
+                        <li class="twitterresults relatedsearches knowledgepanel featuredsnippet videos"><a id="Sexual orientation" data-src="../SERP_Collection/6-8-22/Sexual orientation.html">Sexual orientation</a></li> 
                     
-                        <li><a id="Trans" data-src="../SERP_Collection/6-8-22/Trans.html">Trans</a></li> 
+                        <li class="seeresultsabout relatedsearches images topstories peoplealsoask videos"><a id="Trans" data-src="../SERP_Collection/6-8-22/Trans.html">Trans</a></li> 
                     
-                        <li><a id="Transgender" data-src="../SERP_Collection/6-8-22/Transgender.html">Transgender</a></li> 
+                        <li class="dictionary topstories knowledgepanel"><a id="Transgender" data-src="../SERP_Collection/6-8-22/Transgender.html">Transgender</a></li> 
                     
-                        <li><a id="Two-spirit" data-src="../SERP_Collection/6-8-22/Two-spirit.html">Two-spirit</a></li> 
+                        <li class="relatedsearches knowledgepanel featuredsnippet peoplealsoask videos"><a id="Two-spirit" data-src="../SERP_Collection/6-8-22/Two-spirit.html">Two-spirit</a></li> 
                     
-                        <li><a id="What are pronouns" data-src="../SERP_Collection/6-8-22/What are pronouns.html">What are pronouns</a></li> 
+                        <li class="seeresultsabout relatedsearches dictionary knowledgepanel peoplealsoask videos"><a id="What are pronouns" data-src="../SERP_Collection/6-8-22/What are pronouns.html">What are pronouns</a></li> 
                     
-                        <li><a id="What does it mean to identify as queer" data-src="../SERP_Collection/6-8-22/What does it mean to identify as queer.html">What does it mean to identify as queer</a></li> 
+                        <li class=""><a id="What does it mean to identify as queer" data-src="../SERP_Collection/6-8-22/What does it mean to identify as queer.html">What does it mean to identify as queer</a></li> 
                     
-                        <li><a id="e em" data-src="../SERP_Collection/6-8-22/e em.html">e em</a></li> 
+                        <li class="images peoplealsoask relatedsearches"><a id="e em" data-src="../SERP_Collection/6-8-22/e em.html">e em</a></li> 
                     
-                        <li><a id="he him" data-src="../SERP_Collection/6-8-22/he him.html">he him</a></li> 
+                        <li class="twitterresults relatedsearches knowledgepanel peoplealsoask videos"><a id="he him" data-src="../SERP_Collection/6-8-22/he him.html">he him</a></li> 
                     
-                        <li><a id="per per" data-src="../SERP_Collection/6-8-22/per per.html">per per</a></li> 
+                        <li class="peoplealsoask relatedsearches videos"><a id="per per" data-src="../SERP_Collection/6-8-22/per per.html">per per</a></li> 
                     
-                        <li><a id="queer identities and pronouns " data-src="../SERP_Collection/6-8-22/queer identities and pronouns .html">queer identities and pronouns </a></li> 
+                        <li class="topads peoplealsoask relatedsearches featuredsnippet"><a id="queer identities and pronouns " data-src="../SERP_Collection/6-8-22/queer identities and pronouns .html">queer identities and pronouns </a></li> 
                     
-                        <li><a id="she her" data-src="../SERP_Collection/6-8-22/she her.html">she her</a></li> 
+                        <li class="twitterresults relatedsearches knowledgepanel peoplealsoask videos"><a id="she her" data-src="../SERP_Collection/6-8-22/she her.html">she her</a></li> 
                     
-                        <li><a id="they them" data-src="../SERP_Collection/6-8-22/they them.html">they them</a></li> 
+                        <li class="seeresultsabout relatedsearches knowledgepanel peoplealsoask videos"><a id="they them" data-src="../SERP_Collection/6-8-22/they them.html">they them</a></li> 
                     
-                        <li><a id="ve ver" data-src="../SERP_Collection/6-8-22/ve ver.html">ve ver</a></li> 
+                        <li class="peoplealsoask relatedsearches featuredsnippet"><a id="ve ver" data-src="../SERP_Collection/6-8-22/ve ver.html">ve ver</a></li> 
                     
-                        <li><a id="xe xem" data-src="../SERP_Collection/6-8-22/xe xem.html">xe xem</a></li> 
+                        <li class="images relatedsearches"><a id="xe xem" data-src="../SERP_Collection/6-8-22/xe xem.html">xe xem</a></li> 
                     
-                        <li><a id="ze hir" data-src="../SERP_Collection/6-8-22/ze hir.html">ze hir</a></li> 
+                        <li class="images peoplealsoask relatedsearches videos"><a id="ze hir" data-src="../SERP_Collection/6-8-22/ze hir.html">ze hir</a></li> 
                     
                     </ul>
                 </nav>

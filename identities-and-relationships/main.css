@@ -9,16 +9,22 @@ nav ul{
 .relationships{
     position: absolute;
     left: -12px;
-    top: 155px;
+    top: 185px;
 }
 
 .identities{
     position: absolute;
     left: -12px;
-    top: 510px;			
+    top: 555px;			
 
 
 }
+
+table, th, td {
+    border: 1px solid;
+    overflow:hidden;
+    overflow-y:scroll;
+  }
 
 
 a:link {
